@@ -12,7 +12,7 @@ function normalizeApiBaseUrl(value) {
   }
 }
 
-const apiBaseUrl = normalizeApiBaseUrl('https://forgeai-software-engineering-agent-production.up.railway.app')
+const apiBaseUrl = normalizeApiBaseUrl('https://AetherAI-software-engineering-agent-production.up.railway.app')
 
 async function request(path, options = {}) {
   if (import.meta.env.PROD && !apiBaseUrl) throw new Error('The production API URL is not configured.')
@@ -22,7 +22,7 @@ async function request(path, options = {}) {
     const response = await fetch(`${apiBaseUrl}${path}`, { ...options, credentials: 'include', signal: controller.signal, headers: { 'Content-Type': 'application/json', ...options.headers } })
     const body = await response.json().catch(() => ({}))
     if (!response.ok) {
-      if (response.status === 401) window.dispatchEvent(new Event('forgeai:unauthorized'))
+      if (response.status === 401) window.dispatchEvent(new Event('AetherAI:unauthorized'))
       const error = new Error(body?.error?.message || `Request failed with status ${response.status}`)
       error.status = response.status
       throw error

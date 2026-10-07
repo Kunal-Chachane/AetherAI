@@ -53,7 +53,7 @@ Set these in Railway:
 
 Set this in Vercel before building:
 
-- `VITE_API_BASE_URL`: the Railway backend origin, for example `https://aetherAI-api.up.railway.app`
+- `VITE_API_BASE_URL`: the Railway backend origin, for example `https://AetherAI-api.up.railway.app`
 
 Vite variables are build-time values. Never expose `GEMINI_API_KEY` with a `VITE_` prefix.
 
